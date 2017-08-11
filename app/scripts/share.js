@@ -1,11 +1,21 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded',function(){
-    var title = 'henryguo诚邀您出席IMWebConf2017前端开发者大会';
-    var title1 = 'henryguo诚邀您出席IMWebConf2017前端开发者大会';
+    var hash=location.hash;
+    var inviter='';
+    if(hash){
+        hash=hash.slice(1);
+        hash=decodeURIComponent(hash);
+        if(checkExist(lecturers,hash) || checkExist(guests,hash)){
+            inviter=hash;
+        }   
+    }
+
+    var title = `${inviter}诚邀您出席IMWebConf2017前端开发者大会`;
+    var title1 = `${inviter}诚邀您出席IMWebConf2017前端开发者大会`;
     var desc = 'IMWebConf2017前端大会即将在深圳科兴国际会议中心举行，届时，W3C、微软、Google、腾讯、阿里等业内专家将出席并分享实践经验。';
     var link = window.location.href;
-    var imgUrl = 'http://2017.imweb.io/share1.jpg';
+    var imgUrl = 'http://m.2017.imweb.io/share.jpg';
 
 
     var timestamp = parseInt(new Date().getTime() / 1000, 10);
@@ -132,4 +142,15 @@ document.addEventListener('DOMContentLoaded',function(){
             console.error(res);
         });
     };  
+
+    function checkExist(collection,name){
+        return collection.some(function(item){
+            if(item.name===name){
+                return true;
+            }
+            else{
+                return false;
+            }
+        })
+    }
 });

@@ -13,7 +13,10 @@ document.addEventListener('DOMContentLoaded', function () {
       hashnav: true,
       hashnavWatchState: true,
       nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev'
+      prevButton: '.swiper-button-prev',
+      preloadImages: false,
+      lazyLoading: true,
+      lazyLoadingInPrevNext: true
     });
   }
   init();
@@ -26,11 +29,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="swiper-slide" data-hash="${encodeURIComponent(lecturer.name)}">
                     <div class="introduction container">
                         <div class="introduction-head">
-                            <img id="img" src="/images/${lecturer.img}" alt="${lecturer.name}">
+                            <img class="swiper-lazy" data-src="/images/${lecturer.img}">
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                         </div>
-                        <h2 class="introduction-title" id="name">${lecturer.name} (${lecturer.desc})</h2>
-                        <p class="introduction-sub">演讲主题：<strong id="title">${lecturer.title}</strong></p>
-                        <p class="introduction-content" id="content">${lecturer.content}</p>
+                        <h2 class="introduction-title">${lecturer.name} (${lecturer.desc})</h2>
+                        <p class="introduction-sub">演讲主题：<strong>${lecturer.title}</strong></p>
+                        <p class="introduction-content">${lecturer.content}</p>
                         <p class="introduction-link">报名官网：<a href="http://2017.imweb.io/" target="_blank">http://2017.imweb.io/</a></p>
                     </div>
                 </div>
@@ -43,10 +47,11 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="swiper-slide" data-hash="${encodeURIComponent(guest.name)}">
           <div class="introduction container">
               <div class="introduction-head">
-                <img id="img" src="/images/${guest.img}" alt="${guest.name}">
+                <img class="swiper-lazy" data-src="/images/${guest.img}">
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
               </div>
-              <h2 class="introduction-title" id="name">${guest.name}</h2>
-              <p class="introduction-sub">嘉宾介绍：<strong id="title">${guest.desc}</strong></p>
+              <h2 class="introduction-title">${guest.name}</h2>
+              <p class="introduction-sub">嘉宾介绍：<strong>${guest.desc}</strong></p>
               <p class="introduction-link">报名官网：<a href="http://2017.imweb.io/" target="_blank">http://2017.imweb.io/</a></p>
             </div>
           </div>
