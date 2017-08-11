@@ -1,0 +1,14 @@
+{
+  "name": "invitation",
+  "private": true,
+  "dependencies": {
+    "normalize-css": "^7.0.0",
+    "swiper": "^3.4.2",
+    "fetch-jsonp": "^1.1.1",
+    "promise-polyfill": "^6.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0"
+  }
+}
