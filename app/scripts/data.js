@@ -235,4 +235,5 @@ let guests=[
     }
 ];
 
+//请勿修改此段代码，与构建相关
 exports.lecturers=lecturers, exports.guests=guests;

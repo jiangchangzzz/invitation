@@ -173,6 +173,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
+//内联所有css和js代码
 gulp.task('inline', ['lint', 'html','images', 'fonts', 'extras'], ()=>{
   return gulp.src('dist/index.html')
     .pipe($.inline({
@@ -182,6 +183,7 @@ gulp.task('inline', ['lint', 'html','images', 'fonts', 'extras'], ()=>{
     .pipe(gulp.dest('dist/'));
 })
 
+//生成js的映射文件
 gulp.task('revjs',()=>{
   return gulp.src('dist/scripts/*.js')
     .pipe(rev())
@@ -190,6 +192,7 @@ gulp.task('revjs',()=>{
     .pipe(gulp.dest('rev/scripts'));
 });
 
+//为引用文件添加md5码
 gulp.task('rev', ()=>{
   return gulp.src(['rev/**/*json','dist/*.html'])
     .pipe(revCollector())
@@ -207,6 +210,7 @@ gulp.task('default', () => {
   });
 });
 
+//自动生成每个讲师和嘉宾的邀请邮件
 gulp.task('email',()=>{
   render(data.lecturers);
   render(data.guests);
@@ -216,7 +220,9 @@ gulp.task('email',()=>{
       gulp.src('app/email.html')
         .pipe($.replace('<% name %>',item.name))
         .pipe($.replace('<% nameEncode %>',encodeURIComponent(encodeURIComponent(item.name))))
-        .pipe($.htmlmin({collapseWhitespace: true}))
+        .pipe($.htmlmin({
+          collapseWhitespace: true
+        }))
         .pipe($.rename(item.name+'.html'))
         .pipe(gulp.dest('email'));
     });
