@@ -8,6 +8,8 @@ const runSequence = require('run-sequence');
 const rev=require('gulp-rev');
 const revCollector=require('gulp-rev-collector');
 
+const data=require('./app/scripts/data');
+
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
@@ -31,12 +33,12 @@ gulp.task('styles', () => {
 gulp.task('scripts', () => {
   return gulp.src('app/scripts/**/*.js')
     .pipe($.plumber())
+    .pipe($.replace('exports.lecturers=lecturers, exports.guests=guests;',''))
     .pipe($.if(dev, $.sourcemaps.init()))
     .pipe($.babel())
     .pipe($.if(dev, $.sourcemaps.write('.')))
     .pipe(gulp.dest('.tmp/scripts'))
     .pipe(reload({stream: true}))
-    .pipe(rev.manifest());
 });
 
 function lint(files) {
@@ -57,7 +59,7 @@ gulp.task('lint:test', () => {
 });
 
 gulp.task('html', ['styles', 'scripts'], () => {
-  return gulp.src('app/*.html')
+  return gulp.src('app/index.html')
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     .pipe($.if(/\.js$/, $.uglify({compress: {drop_console: true}})))
     .pipe($.if(/\.css$/, $.cssnano({safe: true, autoprefixer: false})))
@@ -203,4 +205,20 @@ gulp.task('default', () => {
     dev = false;
     runSequence(['clean', 'wiredep'], 'inline', 'revjs', 'rev', 'build', resolve);
   });
+});
+
+gulp.task('email',()=>{
+  render(data.lecturers);
+  render(data.guests);
+
+  function render(array){
+    array.forEach((item)=>{
+      gulp.src('app/email.html')
+        .pipe($.replace('<% name %>',item.name))
+        .pipe($.replace('<% nameEncode %>',encodeURIComponent(encodeURIComponent(item.name))))
+        .pipe($.htmlmin({collapseWhitespace: true}))
+        .pipe($.rename(item.name+'.html'))
+        .pipe(gulp.dest('email'));
+    });
+  }
 });

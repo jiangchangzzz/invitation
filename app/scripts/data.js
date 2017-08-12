@@ -224,8 +224,15 @@ let guests=[
         img: 'camdyzeng.jpg'
     },
     {
+        name: 'jimyan',
+        desc: '腾讯Web前端高级工程师',
+        img: 'jimyan.png'
+    },
+    {
         name: 'henryguo',
         desc: '腾讯在线教育前端中心总监，IMWeb团队负责人',
         img: 'henryguo.jpg'
     }
 ];
+
+exports.lecturers=lecturers, exports.guests=guests;
