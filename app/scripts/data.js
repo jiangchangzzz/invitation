@@ -297,7 +297,7 @@ let staffs=[
         en: 'bluecjiang',
         name: '江畅',
         desc: 'IMWeb团队成员，腾讯Web前端工程师',
-        img: 'profile.gif'
+        img: 'bluecjiang.png'
     },
     {
         en: 'coverguo',
@@ -452,7 +452,7 @@ let staffs=[
     {
         en: 'zardliu',
         name: '刘栋',
-        img: 'profile.gif',
+        img: 'zardliu.png',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {

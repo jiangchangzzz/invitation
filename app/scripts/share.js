@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded',function(){
     var title = '诚邀您出席IMWebConf2017前端开发者大会';
     var desc = 'IMWebConf2017前端大会即将在深圳科兴国际会议中心举行，届时，W3C、微软、Google、腾讯、阿里等业内专家将出席并分享实践经验。';
     var link = window.location.href;
-    var imgUrl = 'http://m.2017.imweb.io/share.jpg';
+    var imgUrl = 'http://m.2017.imweb.io/share.png';
 
     var timestamp = parseInt(new Date().getTime() / 1000, 10);
     var nonceStr = 'R' + parseInt(Math.random() * 1000000, 10);
