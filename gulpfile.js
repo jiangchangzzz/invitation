@@ -33,7 +33,7 @@ gulp.task('styles', () => {
 gulp.task('scripts', () => {
   return gulp.src('app/scripts/**/*.js')
     .pipe($.plumber())
-    .pipe($.replace('exports.lecturers=lecturers, exports.guests=guests;',''))
+    .pipe($.replace('exports.guests=guests;',''))
     .pipe($.if(dev, $.sourcemaps.init()))
     .pipe($.babel())
     .pipe($.if(dev, $.sourcemaps.write('.')))
@@ -212,7 +212,6 @@ gulp.task('default', () => {
 
 //自动生成每个讲师和嘉宾的邀请邮件
 gulp.task('email',()=>{
-  render(data.lecturers);
   render(data.guests);
 
   function render(array){
@@ -220,6 +219,7 @@ gulp.task('email',()=>{
       gulp.src(['rev/**/*json','app/email.html'])
         .pipe($.replace('<% name %>',item.name))
         .pipe($.replace('<% qrname %>',item.qr))
+        .pipe($.replace('<% nameEncode %>',encodeURIComponent(item.name)))
         .pipe(revCollector())
         .pipe($.htmlmin({
           collapseWhitespace: true

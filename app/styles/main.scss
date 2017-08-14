@@ -150,6 +150,11 @@ body {
     letter-spacing: -1px;
     line-height: 1.2;
     @include font-dpr(16px);
+
+    .title-type{
+      font-weight: normal;
+      @include font-dpr(14px);
+    }
   }
 
   &-sub{

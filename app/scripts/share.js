@@ -1,22 +1,10 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded',function(){
-    var hash=location.hash;
-    var inviter='';
-    if(hash){
-        hash=hash.slice(1);
-        hash=decodeURIComponent(hash);
-        if(checkExist(lecturers,hash) || checkExist(guests,hash)){
-            inviter=hash;
-        }   
-    }
-
-    var title = `${inviter}诚邀您出席IMWebConf2017前端开发者大会`;
-    var title1 = `${inviter}诚邀您出席IMWebConf2017前端开发者大会`;
+    var title = '诚邀您出席IMWebConf2017前端开发者大会';
     var desc = 'IMWebConf2017前端大会即将在深圳科兴国际会议中心举行，届时，W3C、微软、Google、腾讯、阿里等业内专家将出席并分享实践经验。';
     var link = window.location.href;
     var imgUrl = 'http://m.2017.imweb.io/share.jpg';
-
 
     var timestamp = parseInt(new Date().getTime() / 1000, 10);
     var nonceStr = 'R' + parseInt(Math.random() * 1000000, 10);
@@ -38,29 +26,6 @@ document.addEventListener('DOMContentLoaded',function(){
             console.error('获取weixin签名失败', e);
         });
 
-    // $.ajax({
-    //     url: 'http://imweb.io/wx/signature',
-    //     type: "GET",
-    //     dataType: 'jsonp',
-    //     jsonp: 'callback',
-    //     data: {
-    //         noncestr: nonceStr,
-    //         timestamp: timestamp,
-    //         url: url
-    //     },
-    //     timeout: 5000,
-    //     success: function (result) {
-    //         signature = result.signature;
-    //         console.log('ajax response result:', result)
-    //         initWXAPI();
-    //     },
-    //     error: function (xhr) {
-    //         //请求出错处理
-    //         console.error('获取weixin签名失败', xhr);
-    //     }
-    // });
-
-
     var initWXAPI = function () {
         var configParams = {
             debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
@@ -74,66 +39,11 @@ document.addEventListener('DOMContentLoaded',function(){
         wx.config(configParams);
 
         wx.ready(function () {
-            wx.onMenuShareTimeline({
-                title: title1, // 分享标题
-                link: link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                imgUrl: imgUrl, // 分享图标
-                success: function () {
-                    // 用户确认分享后执行的回调函数
-                },
-                cancel: function () {
-                    // 用户取消分享后执行的回调函数
-                }
-            });
-            wx.onMenuShareAppMessage({
-                title: title, // 分享标题
-                desc: desc, // 分享描述
-                link: link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                imgUrl: imgUrl, // 分享图标
-                type: '', // 分享类型,music、video或link，不填默认为link
-                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-                success: function () {
-                    // 用户确认分享后执行的回调函数
-                },
-                cancel: function () {
-                    // 用户取消分享后执行的回调函数
-                }
-            });
-            wx.onMenuShareQQ({
-                title: title, // 分享标题
-                desc: desc, // 分享描述
-                link: link, // 分享链接
-                imgUrl: imgUrl, // 分享图标
-                success: function () {
-                    // 用户确认分享后执行的回调函数
-                },
-                cancel: function () {
-                    // 用户取消分享后执行的回调函数
-                }
-            });
-            wx.onMenuShareWeibo({
-                title: title, // 分享标题
-                desc: desc, // 分享描述
-                link: link, // 分享链接
-                imgUrl: imgUrl, // 分享图标
-                success: function () {
-                    // 用户确认分享后执行的回调函数
-                },
-                cancel: function () {
-                    // 用户取消分享后执行的回调函数
-                }
-            });
-            wx.onMenuShareQZone({
-                title: title, // 分享标题
-                desc: desc, // 分享描述
-                link: link, // 分享链接
-                imgUrl: imgUrl, // 分享图标
-                success: function () {
-                    // 用户确认分享后执行的回调函数
-                },
-                cancel: function () {
-                    // 用户取消分享后执行的回调函数
-                }
+            bindShare();
+
+            //滑块滑动后，重新绑定分享信息
+            window.addEventListener('hashchange',function(){
+                bindShare();
             });
         });
 
@@ -143,6 +53,7 @@ document.addEventListener('DOMContentLoaded',function(){
         });
     };  
 
+    //检查名单中是否存在此name
     function checkExist(collection,name){
         return collection.some(function(item){
             if(item.name===name){
@@ -152,5 +63,90 @@ document.addEventListener('DOMContentLoaded',function(){
                 return false;
             }
         })
+    }
+
+    //获取当前邀请人
+    function getCurrentSelect(){
+        var hash=location.hash;
+        var inviter='';
+        if(hash){
+            hash=hash.slice(1);
+            hash=decodeURIComponent(hash);
+            if(checkExist(lecturers,hash) || checkExist(guests,hash) || checkExist(staffs,hash)){
+                if(hash===decodeURIComponent('%E6%93%8D%E9%BE%99%E6%95%8F')){
+                    inviter='bleanycao';
+                }
+                else{
+                    inviter=hash;
+                }
+            }   
+        }
+        return inviter;
+    }
+
+    //绑定分享信息
+    function bindShare(){
+        var totalTitle=getCurrentSelect()+title;
+        wx.onMenuShareTimeline({
+            title: totalTitle, // 分享标题
+            link: link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: imgUrl, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+        wx.onMenuShareAppMessage({
+            title: totalTitle, // 分享标题
+            desc: desc, // 分享描述
+            link: link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: imgUrl, // 分享图标
+            type: '', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+        wx.onMenuShareQQ({
+            title: totalTitle, // 分享标题
+            desc: desc, // 分享描述
+            link: link, // 分享链接
+            imgUrl: imgUrl, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+        wx.onMenuShareWeibo({
+            title: totalTitle, // 分享标题
+            desc: desc, // 分享描述
+            link: link, // 分享链接
+            imgUrl: imgUrl, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+        wx.onMenuShareQZone({
+            title: totalTitle, // 分享标题
+            desc: desc, // 分享描述
+            link: link, // 分享链接
+            imgUrl: imgUrl, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
     }
 });
