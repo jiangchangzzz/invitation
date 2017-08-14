@@ -217,9 +217,10 @@ gulp.task('email',()=>{
 
   function render(array){
     array.forEach((item)=>{
-      gulp.src('app/email.html')
+      gulp.src(['rev/**/*json','app/email.html'])
         .pipe($.replace('<% name %>',item.name))
-        .pipe($.replace('<% nameEncode %>',encodeURIComponent(encodeURIComponent(item.name))))
+        .pipe($.replace('<% qrname %>',item.qr))
+        .pipe(revCollector())
         .pipe($.htmlmin({
           collapseWhitespace: true
         }))
