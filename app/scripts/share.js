@@ -3,12 +3,11 @@
 document.addEventListener('DOMContentLoaded',function(){
     var title = '诚邀您出席IMWebConf2017前端开发者大会';
     var desc = 'IMWebConf2017前端大会即将在深圳科兴国际会议中心举行，届时，W3C、微软、Google、腾讯、阿里等业内专家将出席并分享实践经验。';
-    var link = window.location.href;
     var imgUrl = 'http://m.2017.imweb.io/share.png';
 
     var timestamp = parseInt(new Date().getTime() / 1000, 10);
     var nonceStr = 'R' + parseInt(Math.random() * 1000000, 10);
-    var url = window.location.href.replace(/#.*$/, '');
+    var url = encodeURIComponent(window.location.href.replace(/#.*$/, ''));
     var signature = '';
 
     fetchJsonp(`http://imweb.io/wx/signature?noncestr=${nonceStr}&timestamp=${timestamp}&url=${url}`,{
@@ -39,6 +38,8 @@ document.addEventListener('DOMContentLoaded',function(){
         wx.config(configParams);
 
         wx.ready(function () {
+            console.log('ready');
+
             bindShare();
 
             //滑块滑动后，重新绑定分享信息
@@ -49,7 +50,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
         wx.error(function (res) {
             // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
-            console.error(res);
+            console.error('error',res);
         });
     };  
 
@@ -73,12 +74,7 @@ document.addEventListener('DOMContentLoaded',function(){
             hash=hash.slice(1);
             hash=decodeURIComponent(hash);
             if(checkExist(lecturers,hash) || checkExist(guests,hash) || checkExist(staffs,hash)){
-                if(hash===decodeURIComponent('%E6%93%8D%E9%BE%99%E6%95%8F')){
-                    inviter='bleanycao';
-                }
-                else{
-                    inviter=hash;
-                }
+                inviter=hash;
             }   
         }
         return inviter;
@@ -87,6 +83,8 @@ document.addEventListener('DOMContentLoaded',function(){
     //绑定分享信息
     function bindShare(){
         var totalTitle=getCurrentSelect()+title;
+        var link = window.location.href;
+        console.log(totalTitle);
         wx.onMenuShareTimeline({
             title: totalTitle, // 分享标题
             link: link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致

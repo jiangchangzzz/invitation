@@ -288,9 +288,9 @@ let staffs=[
         img: 'avenwu.png'
     },
     {
-        en: 'bleanycao',
-        name: '操龙敏',
-        desc: 'IMWeb团队成员，腾讯Web前端高级工程师',
+        en: 'bleany',
+        name: 'bleany',
+        desc: 'IMWeb团队女神，腾讯Web前端高级工程师',
         img: 'bleanycao.jpg'
     },
     {
@@ -386,7 +386,7 @@ let staffs=[
     {
         en: 'lizzydeng',
         name: '邓雪',
-        img: 'profile.gif',
+        img: 'lizzydeng.png',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {
@@ -416,7 +416,7 @@ let staffs=[
     {
         en: 'qlin',
         name: '林全昌',
-        img: 'profile.gif',
+        img: 'qlin.png',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {
@@ -440,7 +440,7 @@ let staffs=[
     {
         en: 'wsongzhang',
         name: '张文松',
-        img: 'profile.gif',
+        img: 'wsongzhang.png',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {
