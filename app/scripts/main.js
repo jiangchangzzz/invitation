@@ -97,7 +97,6 @@ document.addEventListener('DOMContentLoaded', function () {
   function templateStaffs(){
     let str='';
     staffs.forEach(function(staff){
-      let staffName=staff.name!==staff.en ? `(${staff.name})`:'';
       let staffTemplate=`
         <div class="swiper-slide" data-hash="${encodeURIComponent(staff.name)}">
           <div class="introduction container">
@@ -105,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <img class="swiper-lazy" data-src="/images/${staff.img}">
               <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </div>
-            <h2 class="introduction-title">${staff.en} ${staffName}</h2>
+            <h2 class="introduction-title">${staff.name}</h2>
             <p class="introduction-sub">成员简介：<strong>${staff.desc}</strong></p>
             <p class="introduction-link">大会官网：<a href="http://2017.imweb.io/" target="_blank">http://2017.imweb.io/</a></p>
           </div>

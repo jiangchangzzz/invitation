@@ -276,200 +276,167 @@ let guests=[
 
 let staffs=[
     {
-        en: 'andyzlliu',
-        name: '刘志龙',
+        name: 'andy',
         desc: 'IMWeb团队成员，腾讯Web前端工程师',
         img: 'andyzlliu.png'
     },
     {
-        en: 'avenwu',
-        name: '吴文斌',
+        name: 'aven',
         desc: 'IMWeb团队成员，腾讯Web前端高级工程师',
         img: 'avenwu.png'
     },
     {
-        en: 'bleany',
         name: 'bleany',
         desc: 'IMWeb团队女神，腾讯Web前端高级工程师',
         img: 'bleanycao.jpg'
     },
     {
-        en: 'bluecjiang',
-        name: '江畅',
+        name: 'blue',
         desc: 'IMWeb团队成员，腾讯Web前端工程师',
         img: 'bluecjiang.png'
     },
     {
-        en: 'coverguo',
-        name: '郭锋棉',
+        name: 'cover',
         desc: 'IMWeb团队成员，腾讯Web前端工程师',
         img: 'coverguo.jpg'
     },
     {
-        en: 'daisyhhuang',
-        name: '黄琼',
+        name: 'daisy',
         desc: 'IMWeb团队成员，腾讯Web前端工程师',
         img: 'daisyhhuang.png'
     },
     {
-        en: 'elvinpeng',
-        name: '彭佳伟',
+        name: 'elvin',
         desc: 'IMWeb团队成员，腾讯Web前端工程师',
         img: 'elvinpeng.png'
     },
     {
-        en: 'fredwu',
-        name: '吴浩',
+        name: 'fred',
         desc: 'IMWeb团队成员，腾讯Web前端高级工程师',
         img: 'fredwu.png'
     },
     {
-        en: 'halwu',
-        name: '吴浩麟',
+        name: 'hal',
         desc: 'IMWeb团队成员，腾讯Web前端工程师',
         img: 'halwu.jpg'
     },
     {
-        en: 'henryguo',
-        name: '郭学亨',
+        name: 'henry',
         img: 'henryguo.jpg',
         desc: '腾讯在线教育前端中心总监，IMWeb团队负责人'
     },
     {
-        en: 'jayccchen',
-        name: '陈超',
+        name: 'jay',
         img: 'jayccchen.png',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {
-        en: 'jerojiang',
-        name: '江源',
+        name: 'jero',
         img: 'jerojiang.jpg',
         desc: 'IMWeb团队成员，腾讯Web前端高级工程师'
     },
     {
-        en: 'jerytang',
-        name: '汤进伟',
+        name: 'jery',
         img: 'jerytang.png',
         desc: 'IMWeb团队成员，腾讯Web前端高级工程师'
     },
     {
-        en: 'jsonhuang',
-        name: '黄志鹏',
+        name: 'json',
         img: 'jsonhuang.png',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {
-        en: 'kevinkuang',
-        name: '邝伟科',
-        img: 'kevinkuang.png',
+        name: 'kevin',
+        img: 'kevinkuang.jpg',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {
-        en: 'kinkahuang',
-        name: '黄钦佳',
+        name: 'kinka',
         img: 'kinkahuang.jpg',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {
-        en: 'krisluo',
-        name: '骆铭涛',
+        name: 'kris',
         img: 'krisluo.png',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {
-        en: 'littenli',
-        name: '黎腾',
+        name: 'litten',
         img: 'littenli.jpg',
         desc: 'IMWeb团队成员，腾讯Web前端高级工程师'
     },
     {
-        en: 'lizzydeng',
-        name: '邓雪',
+        name: 'lizzy',
         img: 'lizzydeng.png',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {
-        en: 'moonye',
-        name: '叶亮',
+        name: 'moon',
         img: 'moonye.png',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {
-        en: 'moxhe',
-        name: '何璇',
+        name: 'mox',
         img: 'moxhe.jpg',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {
-        en: 'nixzheng',
-        name: '郑昕',
+        name: 'nix',
         img: 'nixzheng.png',
         desc: 'IMWeb团队成员，腾讯Web前端高级工程师'
     },
     {
-        en: 'paytonzhao',
-        name: '赵培霏',
+        name: 'payton',
         img: 'paytonzhao.png',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {
-        en: 'qlin',
-        name: '林全昌',
+        name: 'qlin',
         img: 'qlin.png',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {
-        en: 'terrancewan',
-        name: '万宽红',
+        name: 'terrance',
         img: 'terrancewan.jpg',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {
-        en: 'vienwu',
-        name: '吴颖',
+        name: 'vien',
         img: 'vienwu.jpg',
         desc: 'IMWeb团队成员，腾讯Web前端高级工程师'
     },
     {
-        en: 'wentliang',
-        name: '梁文涛',
+        name: 'went',
         img: 'wentliang.jpg',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {
-        en: 'wsongzhang',
-        name: '张文松',
+        name: 'wsong',
         img: 'wsongzhang.png',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {
-        en: 'ycxu',
-        name: '徐远朝',
+        name: 'yc',
         img: 'ycxu.png',
         desc: 'IMWeb团队成员，腾讯Web前端高级工程师'
     },
     {
-        en: 'zardliu',
-        name: '刘栋',
+        name: 'zard',
         img: 'zardliu.png',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {
-        en: 'zzbozheng',
-        name: '郑振波',
+        name: 'zzbo',
         img: 'zzbozheng.png',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {
-        en: 'lqlongli',
-        name: '黎清龙',
+        name: 'lqlong',
         img: 'lqlongli.png',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     },
     {
-        en: 'shijisun',
-        name: '孙世吉',
+        name: 'shiji',
         img: 'shijisun.png',
         desc: 'IMWeb团队成员，腾讯Web前端工程师'
     }
