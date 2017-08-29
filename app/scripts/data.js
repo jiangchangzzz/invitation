@@ -271,6 +271,21 @@ let guests=[
         desc: '腾讯在线教育前端中心总监，IMWeb团队负责人',
         img: 'henryguo.jpg',
         qr: 'henryguo.png'
+    },
+    {
+        name: '杨文坚',
+        desc: '阿里巴巴技术专家，前IMWeb高级开发工程师',
+        img: 'yangwenjian.jpg'
+    },
+    {
+        name: '小倩',
+        desc: 'Xiaoqian(aka Cindy) joined W3C at Beihang site in Oct 2013 and previously worked in this area for several companies such as Alibaba, Baidu and Apple.',
+        img: 'xiaoqian.png'
+    },
+    {
+        name: 'An Qi Li',
+        desc: 'Site Manager of W3C/Beihang',
+        img: 'anqili.png'
     }
 ];
 
@@ -302,7 +317,7 @@ let staffs=[
     },
     {
         name: 'daisy',
-        desc: 'IMWeb团队成员，腾讯Web前端工程师',
+        desc: 'IMWeb团队女神，腾讯Web前端工程师',
         img: 'daisyhhuang.png'
     },
     {
@@ -368,7 +383,7 @@ let staffs=[
     {
         name: 'lizzy',
         img: 'lizzydeng.png',
-        desc: 'IMWeb团队成员，腾讯Web前端工程师'
+        desc: 'IMWeb团队女神，腾讯Web前端工程师'
     },
     {
         name: 'moon',

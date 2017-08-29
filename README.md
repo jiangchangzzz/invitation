@@ -1,7 +1,7 @@
 # Conf Invitation
 
 ## 介绍
-conf邀请函h5页面和邀请函邮件页面
+conf邀请函h5页面和邀请函邮件页面，包含微信分享功能，使用npm,bower,gulp构建
 
 ## 使用方法
 安装必要的npm包和bower包
@@ -20,7 +20,7 @@ gulp serve
 gulp
 ```
 
-将邀请函邮件生成到email文件夹中
+将邀请函邮件生成到email文件夹中，以邀请人命名
 ```
 gulp email
 ```
