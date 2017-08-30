@@ -275,17 +275,122 @@ let guests=[
     {
         name: '杨文坚',
         desc: '阿里巴巴技术专家，前IMWeb高级开发工程师',
-        img: 'yangwenjian.jpg'
+        img: 'yangwenjian.jpg',
+        qr: 'yangwenjian.png'
+    },
+    {
+        name: '方应杭',
+        desc: '饥人谷联合创始人，前IMWeb团队成员',
+        img: 'fangfang.png',
+        qr: 'fangfang.png'
+    },
+    {
+        name: '张成文',
+        desc: '著有书籍《现代前端技术解析》，前IMWeb团队成员',
+        img: 'ouven.png',
+        qr: 'ouven.png'
+    },
+    {
+        name: '冉海俊',
+        desc: '腾讯Web前端工程师，前IMWeb团队成员',
+        img: 'ranhaijun.jpg',
+        qr: 'ranhaijun.png'
+    },
+    {
+        name: '李冬冬',
+        desc: '前IMWeb团队成员',
+        img: 'lidongdong.png',
+        qr: 'lidongdong.png'
+    },
+    {
+        name: '袁飞翔',
+        desc: '前IMWeb团队成员',
+        img: 'yuanfeixiang.png',
+        qr: 'yuanfeixiang.png'
+    },
+    {
+        name: '邓海龙',
+        desc: '前IMWeb团队成员',
+        img: 'denghailong.jpg',
+        qr: 'denghailong.png'
+    },
+    {
+        name: '杨宾生',
+        desc: '前IMWeb团队成员',
+        img: 'yangbingsheng.png',
+        qr: 'yangbingsheng.png'
+    },
+    {
+        name: '黄龙',
+        desc: '前IMWeb团队成员',
+        img: 'huanglong.jpg',
+        qr: 'huanglong.png'
+    },
+    {
+        name: '张颖',
+        desc: '腾讯Web前端工程师，前IMWeb团队成员',
+        img: 'zhangying.jpg',
+        qr: 'zhangying.png'
+    },
+    {
+        name: 'adamhe',
+        desc: '腾讯Web前端工程师',
+        img: 'adamhe.png',
+        qr: 'adamhe.png'
+    },
+    {
+        name: 'kevinyyang',
+        desc: '腾讯Web前端高级工程师',
+        img: 'kevinyyang.jpg',
+        qr: 'kevinyyang.png'
+    },
+    {
+        name: 'linkzhu',
+        desc: '腾讯Web前端工程师',
+        img: 'linkzhu.png',
+        qr: 'linkzhu.png'
+    },
+    {
+        name: 'kurtshen',
+        desc: '腾讯Web前端工程师',
+        img: 'kurtshen.png',
+        qr: 'kurtshen.png'
+    },
+    {
+        name: 'sampsonwang',
+        desc: '腾讯Web前端工程师',
+        img: 'sampsonwang.jpg',
+        qr: 'sampsonwang.png'
+    },
+    {
+        name: 'linjianghe',
+        desc: '腾讯Web前端工程师',
+        img: 'linjianghe.jpg',
+        qr: 'linjianghe.png'
+    },
+    {
+        name: 'weberpan',
+        desc: '腾讯高级Web前端工程师',
+        img: 'weberpan.jpg',
+        qr: 'weberpan.png'
     },
     {
         name: '小倩',
         desc: 'Xiaoqian(aka Cindy) joined W3C at Beihang site in Oct 2013 and previously worked in this area for several companies such as Alibaba, Baidu and Apple.',
-        img: 'xiaoqian.png'
+        img: 'xiaoqian.png',
+        qr: 'xiaoqian.png'
     },
     {
         name: 'An Qi Li',
         desc: 'Site Manager of W3C/Beihang',
-        img: 'anqili.png'
+        img: 'anqili.png',
+        qr: 'anqili.png'
+    },
+    {
+        name: 'zbhuang',
+        desc: 'IMWebConf2017赞助商',
+        img: 'zbhuang.png',
+        qr: 'zbhuang.png'
     }
 ];
 
